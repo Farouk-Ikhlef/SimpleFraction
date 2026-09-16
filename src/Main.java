@@ -20,5 +20,7 @@ public class Main {
 
         assert f1.getNumerator() == 3;
         assert f1.getDenominator() == 4;
+
+        assert Math.abs(f1.doubleValue() - 0.75) < 1e-8;
     }
 }
