@@ -33,5 +33,9 @@ public class Main {
         Fraction small = new Fraction(1, 2);
         Fraction big = new Fraction(2, 3);
         assert small.compareTo(big) < 0;
+
+        Number aNumber = java.math.BigDecimal.ONE;
+        Number anotherNumber = new Fraction(1, 2);
+        assert Math.abs(aNumber.doubleValue() + anotherNumber.doubleValue() - 1.5) < 1E-8;
     }
 }
