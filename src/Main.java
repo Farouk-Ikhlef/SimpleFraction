@@ -29,5 +29,9 @@ public class Main {
         Fraction a = new Fraction(2, 4);
         Fraction b = new Fraction(1, 2);
         assert a.equals(b);
+
+        Fraction small = new Fraction(1, 2);
+        Fraction big = new Fraction(2, 3);
+        assert small.compareTo(big) < 0;
     }
 }

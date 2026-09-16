@@ -1,4 +1,4 @@
-public class Fraction {
+public class Fraction implements Comparable<Fraction> {
     private int numerator;
     private int denominator;
 
@@ -49,6 +49,7 @@ public class Fraction {
         return a;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Fraction)) {
             return false;
@@ -64,6 +65,13 @@ public class Fraction {
         int reducedDen2 = other.denominator / g2;
 
         return reducedNum1 == reducedNum2 && reducedDen1 == reducedDen2;
+    }
+
+    @Override
+    public int compareTo(Fraction other) {
+        long left = (long) this.numerator * other.denominator;
+        long right = (long) other.numerator * this.denominator;
+        return Long.compare(left, right);
     }
 
     @Override
