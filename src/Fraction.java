@@ -20,6 +20,14 @@ public class Fraction {
         this.denominator = 1;
     }
 
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
+
     @Override
     public String toString() {
         return numerator + "/" + denominator;

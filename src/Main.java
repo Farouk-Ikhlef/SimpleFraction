@@ -17,5 +17,8 @@ public class Main {
 
         assert Fraction.ZERO.toString().equals("0/1");
         assert Fraction.UN.toString().equals("1/1");
+
+        assert f1.getNumerator() == 3;
+        assert f1.getDenominator() == 4;
     }
 }
