@@ -25,5 +25,9 @@ public class Main {
 
         Fraction sum = new Fraction(1, 2).add(new Fraction(1, 3));
         assert sum.toString().equals("5/6");
+
+        Fraction a = new Fraction(2, 4);
+        Fraction b = new Fraction(1, 2);
+        assert a.equals(b);
     }
 }

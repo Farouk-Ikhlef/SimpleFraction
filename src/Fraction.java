@@ -38,6 +38,34 @@ public class Fraction {
         return new Fraction(newNumerator, newDenominator);
     }
 
+    private int gcd(int a, int b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Fraction)) {
+            return false;
+        }
+        Fraction other = (Fraction) obj;
+
+        int g1 = gcd(this.numerator, this.denominator);
+        int g2 = gcd(other.numerator, other.denominator);
+
+        int reducedNum1 = this.numerator / g1;
+        int reducedDen1 = this.denominator / g1;
+        int reducedNum2 = other.numerator / g2;
+        int reducedDen2 = other.denominator / g2;
+
+        return reducedNum1 == reducedNum2 && reducedDen1 == reducedDen2;
+    }
+
     @Override
     public String toString() {
         return numerator + "/" + denominator;
