@@ -32,6 +32,12 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public Fraction add(Fraction other) {
+        int newNumerator = this.numerator * other.denominator + this.denominator * other.numerator;
+        int newDenominator = this.denominator * other.denominator;
+        return new Fraction(newNumerator, newDenominator);
+    }
+
     @Override
     public String toString() {
         return numerator + "/" + denominator;

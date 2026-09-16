@@ -22,5 +22,8 @@ public class Main {
         assert f1.getDenominator() == 4;
 
         assert Math.abs(f1.doubleValue() - 0.75) < 1e-8;
+
+        Fraction sum = new Fraction(1, 2).add(new Fraction(1, 3));
+        assert sum.toString().equals("5/6");
     }
 }
